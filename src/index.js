@@ -1,2 +1,5 @@
-import "./styles.css";
-console.log("I'm working!");
+import './styles.css';
+import { createUI } from '../modules/dom';
+import { createTask } from '../modules/logic';
+createUI();
+createTask();
