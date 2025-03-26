@@ -9,6 +9,7 @@ export function taskModal() {
   // Pending clicking outside modal closes it
 }
 
+// Task blueprint (individual)
 class Task {
   constructor(title, description, dueDate) {
     this.title = title;
@@ -37,6 +38,11 @@ class Task {
 
     return taskContainer;
   }
+}
+
+// Task manager (global)
+class TaskList {
+
 }
 
 export function createTaskTest() {
