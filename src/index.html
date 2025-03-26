@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <div id="content"></div>
+    <div id="main-container"></div>
+    <button id="new-task">(Modal) New Task</button>
+    <button id="test-task">Testing</button>
+    <div id="task-modal">
+      <div id="task-form">
+        <p id="close-form">&times;</p>
+        <h3>Create Task</h3>
+        <label for="input-title">Title:</label>
+        <input type="text" id="input-title" />
+        <button id="form-cancel" class="form-button">Cancel</button>
+        <button id="form-create" class="form-button">Create</button>
+      </div>
+    </div>
   </body>
 </html>

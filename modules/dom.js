@@ -1,45 +1,9 @@
-const divContent = document.querySelector('#content');
+import { createTaskTest } from './logic';
 
-export function createUI() {
-  const newProjectButton = document.createElement("button");
-  const newTaskButton = document.createElement("button");
+const mainDiv = document.getElementById('main-container');
+const newTaskBtn = document.getElementById('new-task');
+const testBtn = document.getElementById('test-task');
 
-  newProjectButton.setAttribute("id", "new-project");
-  newTaskButton.setAttribute("id", "new-task");
-  newProjectButton.textContent = "New Project";
-  newTaskButton.textContent = "New Task";
-  divContent.appendChild(newProjectButton);
-  divContent.appendChild(newTaskButton);
+export function testingTaskCreation() {
+  testBtn.addEventListener('click', () => createTaskTest());
 }
-
-export function taskCreator() {
-  
-  const taskElements = {
-    taskTitle: document.createElement('input'),
-    taskDesc: document.createElement('input'),
-    //taskDueDate:
-    //taskPrior:
-    taskNotes: document.createElement('textarea'),
-    taskEdit: document.createElement('button'),
-    taskCheck: document.createElement('button'),
-    taskDelete: document.createElement('button'),
-  };
-
-  taskElements.taskEdit.textContent = 'Edit';
-  taskElements.taskCheck.textContent = 'Check';
-  taskElements.taskDelete.textContent = 'Erase';
-
-  const newTask = document.createElement('div');
-
-  const keys = Object.keys(taskElements);
-  console.log(keys);
-
-  for (const element in taskElements) {
-    newTask.appendChild(taskElements[element]);
-  }
-
-  divContent.appendChild(newTask);
-}
-
-
-// Pending add class to elements based on the taskElements keys
