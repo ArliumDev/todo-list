@@ -18,8 +18,7 @@ export class Task {
     this.desc = desc;
     this.date = date;
     this.prior = prior;
-    const taskElement = this.createHTML;
-    const priorities = ["low", "normal", "high"];
+    this.taskElement = this.createHTML();
   }
 
   createHTML() {
@@ -30,6 +29,10 @@ export class Task {
     const taskPrior = document.createElement("ul");
     taskTitle.innerText = "Hola";
     taskContainer.appendChild(taskTitle);
+    taskContainer.appendChild(taskDesc);
+    taskContainer.appendChild(taskDate);
+    taskContainer.appendChild(taskPrior);
+    
     return taskContainer;
   }
 }
