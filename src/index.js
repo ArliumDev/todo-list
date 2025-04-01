@@ -1,6 +1,12 @@
+import { Project } from "../modules/logic";
+import { Task } from "../modules/logic";
+// Testing para hacer una task y añadirlo al array de Project
 
+const projectTest = new Project;
+const taskTest = new Task("Test","Esto es un test","hoy","total");
+const taskTest2 = new Task("Test 2", "Esto es otro test", "mañana", "leve");
 
-const container = document.querySelector('container');
+projectTest.addTask(taskTest);
+projectTest.addTask(taskTest2);
 
-container.innerHTML = 'Hola';
-
+console.log(projectTest.tasks);

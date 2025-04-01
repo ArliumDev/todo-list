@@ -1,3 +1,5 @@
+
+
 // Projects manager
 
 class ProjectManager {
@@ -9,6 +11,10 @@ export class Project {
     this.id = Date.now().toString();
     this.name = name;
     this.tasks = [];
+  }
+
+  addTask(task) {
+    this.tasks.push(task);
   }
 }
 
@@ -22,17 +28,16 @@ export class Task {
   }
 
   createHTML() {
-    const taskContainer = document.createElement("div");
-    const taskTitle = document.createElement("h3");
-    const taskDesc = document.createElement("p");
-    const taskDate = document.createElement("input");
-    const taskPrior = document.createElement("ul");
-    taskTitle.innerText = "Hola";
+    const taskContainer = document.createElement('div');
+    const taskTitle = document.createElement('h3');
+    const taskDesc = document.createElement('p');
+    const taskDate = document.createElement('input');
+    const taskPrior = document.createElement('ul');
     taskContainer.appendChild(taskTitle);
     taskContainer.appendChild(taskDesc);
     taskContainer.appendChild(taskDate);
     taskContainer.appendChild(taskPrior);
-    
+
     return taskContainer;
   }
 }
