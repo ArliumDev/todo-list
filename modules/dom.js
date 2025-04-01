@@ -1,9 +1,6 @@
-import { createTaskTest } from './logic';
+// Find DOM elements
 
-const mainDiv = document.getElementById('main-container');
-const newTaskBtn = document.getElementById('new-task');
-const testBtn = document.getElementById('test-task');
+export const container = document.querySelector('.container');
+export const newProjectBtn = document.querySelector('#project-btn');
+export const newTaskBtn = document.querySelector('#task-btn');
 
-export function testingTaskCreation() {
-  testBtn.addEventListener('click', () => createTaskTest());
-}

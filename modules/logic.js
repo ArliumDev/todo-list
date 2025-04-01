@@ -1,51 +1,43 @@
-const mainDiv = document.getElementById('main-container');
-const newTask = document.getElementById('new-task');
 
-export function taskModal() {
-  const modal = document.getElementById('task-modal');
-  const closeBtn = document.getElementById('close-form');
-  newTask.addEventListener('click', () => (modal.style.display = 'block'));
-  closeBtn.addEventListener('click', () => (modal.style.display = 'none'));
-  // Pending clicking outside modal closes it
+
+// Projects manager
+
+class ProjectManager {
+  constructor() {}
 }
 
-// Task blueprint (individual)
-class Task {
-  constructor(title, description, dueDate) {
+export class Project {
+  constructor(name) {
+    this.id = Date.now().toString();
+    this.name = name;
+    this.tasks = [];
+  }
+
+  addTask(task) {
+    this.tasks.push(task);
+  }
+}
+
+export class Task {
+  constructor(title, desc, date, prior) {
     this.title = title;
-    this.description = description;
-    this.dueDate = dueDate;
+    this.desc = desc;
+    this.date = date;
+    this.prior = prior;
     this.taskElement = this.createHTML();
   }
 
   createHTML() {
     const taskContainer = document.createElement('div');
-    const taskTitle = document.createElement('h2');
+    const taskTitle = document.createElement('h3');
     const taskDesc = document.createElement('p');
-    const deleteBtn = document.createElement('button');
-    const editBtn = document.createElement('button');
-    const toggleBtn = document.createElement('button');
-    taskTitle.textContent = this.title;
-    taskDesc.textContent = this.description;
-    deleteBtn.textContent = 'Delete';
-    editBtn.textContent = 'Edit';
-    toggleBtn.textContent = 'Complete';
+    const taskDate = document.createElement('input');
+    const taskPrior = document.createElement('ul');
     taskContainer.appendChild(taskTitle);
     taskContainer.appendChild(taskDesc);
-    taskContainer.appendChild(deleteBtn);
-    taskContainer.appendChild(editBtn);
-    taskContainer.appendChild(toggleBtn);
+    taskContainer.appendChild(taskDate);
+    taskContainer.appendChild(taskPrior);
 
     return taskContainer;
   }
-}
-
-// Task manager (global)
-class TaskList {
-
-}
-
-export function createTaskTest() {
-  const task = new Task("Testing", "This is a test");
-  mainDiv.appendChild(task.taskElement);
 }
