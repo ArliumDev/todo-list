@@ -1,12 +1,10 @@
-import { Project } from "../modules/logic";
-import { Task } from "../modules/logic";
+import { newTaskBtn } from "../modules/dom";
+import { TaskManager } from "../modules/logic";
+
 // Testing para hacer una task y añadirlo al array de Project
 
-const projectTest = new Project;
-const taskTest = new Task("Test","Esto es un test","hoy","total");
-const taskTest2 = new Task("Test 2", "Esto es otro test", "mañana", "leve");
+const taskManager = new TaskManager;
 
-projectTest.addTask(taskTest);
-projectTest.addTask(taskTest2);
-
-console.log(projectTest.tasks);
+newTaskBtn.addEventListener("click", () => {
+  taskManager.createTask();
+});
