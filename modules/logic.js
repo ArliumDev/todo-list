@@ -1,4 +1,4 @@
-import { tasksContainer } from './dom';
+import { cancelModal, tasksContainer, newTaskBtn, taskModal } from './dom';
 
 // Projects manager
 
@@ -12,21 +12,34 @@ export class TaskManager {
     this.newId = 0;
   }
   createTask() {
-    const task = new Task();
-    task.id = this.newId;
-    this.newId++;
+    const task = new Task(this);
     this.taskList.push(task);
     this.updateList();
-    tasksContainer.appendChild(task.taskElement);
   }
   updateList() {
-    this.taskList.forEach(task => console.log(task));
+    this.idReassign();
+    tasksContainer.innerHTML = '';
+    this.taskList.forEach((task) => {
+      tasksContainer.appendChild(task.taskElement);
+      console.log(task);
+    });
   }
-  deleteTask(id) {}
-}
+  deleteTask(id) {
+    this.taskList = this.taskList.filter((task) => task.id !== id);
+    this.updateList();
+  }
 
+  idReassign() {
+    this.newId = 0;
+    this.taskList.forEach((task) => {
+      task.id = this.newId;
+      this.newId++;
+    });
+  }
+}
 export class Task {
-  constructor(title, desc, date, prior) {
+  constructor(manager, title, desc, date, prior) {
+    this.manager = manager;
     this.title = title;
     this.desc = desc;
     this.date = date;
@@ -41,20 +54,43 @@ export class Task {
     const taskDesc = document.createElement('p');
     const taskDate = document.createElement('p');
     const taskPrior = document.createElement('p');
+    const taskDel = document.createElement('button');
     taskTitle.textContent = 'Test Title';
     taskDesc.textContent = 'Test Description';
     taskDate.textContent = '01-01-2025';
     taskPrior.textContent = 'Test Priority';
+    taskDel.textContent = 'Delete';
     this.title = taskTitle.textContent;
     this.desc = taskDesc.textContent;
     this.date = taskDate.textContent;
     this.prior = taskPrior.textContent;
+    taskDel.addEventListener('click', () => {
+      const taskManager = this.manager;
+      taskManager.deleteTask(this.id);
+    });
     const taskArr = [];
-    taskArr.push(taskTitle, taskDesc, taskDate, taskPrior);
+    taskArr.push(taskTitle, taskDesc, taskDate, taskPrior, taskDel);
     taskArr.forEach((element) => {
       taskContainer.appendChild(element);
     });
 
     return taskContainer;
   }
+}
+
+function toggleHideModal() {
+  if (cancelModal) {
+    taskModal.classList.toggle('hidden');
+  }
+}
+
+const taskManager = new TaskManager();
+
+export function initializeEventListeners() {
+  newTaskBtn.addEventListener('click', () => {
+    taskManager.createTask();
+  });
+  cancelModal.addEventListener("click", () => {
+    toggleHideModal();
+  })
 }

@@ -11,6 +11,24 @@
         <button id="task-btn">New task</button>
       </div>
       <div id="tasks-container"></div>
+      <div id="task-modal">
+        <button id="cancel-modal">&#10005;</button>
+        <label for="modal-title">Title:</label>
+        <input type="text" />
+        <label for="modal-desc">Description:</label>
+        <textarea rows="5" cols="25" id="modal-desc"></textarea>
+        <label for="modal-date">Date:</label>
+        <input type="date" />
+        <div id="modal-prior">
+          <label for="task-prior">Priority:</label>
+          <label for="low">Low</label>
+          <input type="radio" id="low" name="priority" />
+          <label for="mid">Mid</label>
+          <input type="radio" id="mid" name="priority" />
+          <label for="hi">High</label>
+          <input type="radio" id="hi" name="priority" />
+        </div>
+      </div>
     </div>
   </body>
 </html>

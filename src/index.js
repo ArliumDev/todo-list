@@ -1,10 +1,6 @@
-import { newTaskBtn } from "../modules/dom";
-import { TaskManager } from "../modules/logic";
+import { initializeEventListeners } from "../modules/logic";
+import "./styles.css";
 
 // Testing para hacer una task y añadirlo al array de Project
 
-const taskManager = new TaskManager;
-
-newTaskBtn.addEventListener("click", () => {
-  taskManager.createTask();
-});
+initializeEventListeners();

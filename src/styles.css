@@ -1,0 +1,19 @@
+#task-modal {
+  display: flex;
+  flex-flow: column;
+  margin: auto;
+  width: 300px;
+}
+
+#cancel-modal {
+  background: none;
+  border: none;
+  width:fit-content;
+  position: relative;
+  left: 285px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
