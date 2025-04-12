@@ -1,4 +1,4 @@
-import { cancelModal, tasksContainer, newTaskBtn, taskModal } from './dom';
+import { cancelModal, tasksContainer, newTaskBtn, taskModal, testHide } from './dom';
 
 // Projects manager
 
@@ -79,8 +79,10 @@ export class Task {
 }
 
 function toggleHideModal() {
-  if (cancelModal) {
-    taskModal.classList.toggle('hidden');
+  if (taskModal.style.display === 'none' || taskModal.style.display === '') {
+    taskModal.style.display = 'flex';
+  } else {
+    taskModal.style.display = 'none';
   }
 }
 
@@ -90,7 +92,10 @@ export function initializeEventListeners() {
   newTaskBtn.addEventListener('click', () => {
     taskManager.createTask();
   });
-  cancelModal.addEventListener("click", () => {
+  cancelModal.addEventListener('click', () => {
     toggleHideModal();
-  })
+  });
+  testHide.addEventListener('click', () => {
+    toggleHideModal();
+  });
 }
