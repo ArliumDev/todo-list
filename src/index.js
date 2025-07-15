@@ -1,4 +1,12 @@
 import './styles.css';
-import { greeting } from './greeting.js';
+import { Project } from './project';
+import { Task } from './task';
 
-console.log(greeting);
+const testingProject = new Project("test");
+const testingTask = new Task('bla', 'bli', '2025-07-15', 'blu');
+
+testingProject.taskList.push(testingTask);
+console.log(testingProject.taskList);
+
+testingTask.createUI();
+

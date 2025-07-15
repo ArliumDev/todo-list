@@ -1,0 +1,3 @@
+- Task manual creation ✅
+- Task delete (UI) ✅
+- Task rendering via Project method 'getTasks' 
