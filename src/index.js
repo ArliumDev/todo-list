@@ -4,9 +4,13 @@ import { Task } from './task';
 
 const testingProject = new Project("test");
 const testingTask = new Task('bla', 'bli', '2025-07-15', 'blu');
+const testingTask2 = new Task ("ble", "blu", "2025-07-22", "blo");
 
-testingProject.taskList.push(testingTask);
-console.log(testingProject.taskList);
+Object.assign(testingTask, {id: 1});
+Object.assign(testingTask2, {id: 2});
 
-testingTask.createUI();
+testingProject.taskList.push(testingTask, testingTask2);
 
+testingProject.getTasks(Task);
+
+testingProject.deleteTask(1);
