@@ -32,7 +32,6 @@ export class Task {
       this.editUI();
     });
     deleteTask.addEventListener('click', () => {
-      this.removeUI();
     });
     [editTask, deleteTask].forEach((el) => buttons.appendChild(el));
     [taskTitle, taskDesc, taskDate, taskPrior, buttons].forEach((el) => task.appendChild(el));

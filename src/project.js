@@ -15,5 +15,7 @@ export class Project {
       Task.createUI();
     });
   }
-  removeTask() {}
+  removeTask() {
+    
+  }
 }
