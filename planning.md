@@ -4,7 +4,7 @@ Una clase que tendrá como parámetros "title", "description", "dueDate" y "prio
 
 // Project 
 
-Una clase que tendrá un array de objetos, siendo estos las tasks, que tendrá como parámetro un "name". Como "valor privado", tendrá un "ID". Como método de clase, tendrá un "renderTasks" y un "delete". Este "delete" también tendrá que borrar las tareas que tenga dentro.
+Una clase que tendrá un array de objetos, siendo estos las tasks, que tendrá como parámetro un "name". Como "valor privado", tendrá un "ID". Como método de clase, tendrá un "renderTasks" y un "delete". Este "delete" también tendrá que borrar las tareas que tenga dentro. Cada Project se encargará de crear las tareas para que las almacene en su array correspondiente. Habrá que buscar alguna manera de determinar el projecto activo via UI.
 
 // Task modal
 

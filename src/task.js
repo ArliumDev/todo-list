@@ -28,9 +28,9 @@ export class Task {
     deleteTask.classList.add('delete-task');
     editTask.innerText = 'Edit';
     deleteTask.innerText = 'Delete';
-    editTask.addEventListener("click", () => {
+    editTask.addEventListener('click', () => {
       this.editUI();
-    })
+    });
     deleteTask.addEventListener('click', () => {
       this.removeUI();
     });
@@ -43,6 +43,6 @@ export class Task {
     if (taskElement) taskElement.remove();
   }
   editUI() {
-    console.log("pending feature");
+    console.log('pending feature');
   }
 }
