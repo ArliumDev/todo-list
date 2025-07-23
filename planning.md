@@ -1,15 +1,15 @@
-// Task 
+- Task
 
-Una clase que tendrá como parámetros "title", "description", "dueDate" y "priority" principalmente. Como "valor privado", tendrá un "ID". Como métodos de clase, tendrá un "edit", un "delete" y un método toggle "check/uncheck".
+Una clase que tendrá todos los elementos de una tarea: Título, fecha límite y prioridad, así como anotaciones por si se necesitara dar más contexto. Tendrá botón de edición, eliminación y un switch para indicar si la tarea está terminada o no.
 
-// Project 
+- Modal (para tareas)
 
-Una clase que tendrá un array de objetos, siendo estos las tasks, que tendrá como parámetro un "name". Como "valor privado", tendrá un "ID". Como método de clase, tendrá un "renderTasks" y un "delete". Este "delete" también tendrá que borrar las tareas que tenga dentro. Cada Project se encargará de crear las tareas para que las almacene en su array correspondiente. Habrá que buscar alguna manera de determinar el projecto activo via UI.
+Formulario que servirá tanto en la creación como edición de las tareas. Tendrá inputs para el título, fecha límite y radios para indicar su prioridad, así como el apartado de anotaciones. Al crear una tarea, se abrirá vacío; al editar una tarea, se recogerán los datos de esa tarea y se pondrán en su sitio correspondiente para poder ser editados. Tendrá un botón de cancelar y un botón de finalizar. El botón de cancelar cerrará la modal; el botón de finalizar mandará los datos a donde corresponda.
 
-// Task modal
+- Modal (para proyectos)
 
-Una modal que servirá tanto para añadir tareas, como para editarlas. Para añadirlas, se pulsará "New Task" y se abrirá limpio. Para editarlas, recogerá el valor de la propia tarea que la invoque para realizar cambios en ella. 
+Formulario que tendrá dos inputs: Título y anotaciones para describir el proyecto en caso de que sea necesario. Más adelante se buscará la manera de poder editar ambos en caso de que sea necesario.
 
-// Project mini-modal
+- Project 
 
-Una modal que solo tendrá un input para recoger el nombre que se le quiera dar al proyecto. También se podrá editar el nombre.
+Una clase que se encargará de todo lo que tenga que ver con las tareas: Crearlas, almacenarlas, editarlas, borrarlas de su almacenamiento y de la UI. Cada proyecto almacenará sus tareas. Habrá que buscar una manera de flaggear cuál es el proyecto activo para que se creen las tareas dentro de él.
