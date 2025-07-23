@@ -1,12 +1,13 @@
 import { app } from './app';
 
 export class Task {
-  constructor(title, description, dueDate, priority) {
+  constructor(title, description, dueDate, priority, onDelete) {
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
     this.priority = priority;
     this.id = crypto.randomUUID();
+    this.onDelete = onDelete;
   }
   createUI() {
     const task = document.createElement('div');
@@ -28,10 +29,10 @@ export class Task {
     deleteTask.classList.add('delete-task');
     editTask.innerText = 'Edit';
     deleteTask.innerText = 'Delete';
-    editTask.addEventListener('click', () => {
-      this.editUI();
-    });
+    editTask.addEventListener('click', () => {});
     deleteTask.addEventListener('click', () => {
+      this.onDelete(this.id);
+      this.removeUI();
     });
     [editTask, deleteTask].forEach((el) => buttons.appendChild(el));
     [taskTitle, taskDesc, taskDate, taskPrior, buttons].forEach((el) => task.appendChild(el));
